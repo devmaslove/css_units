@@ -45,6 +45,12 @@ dependencies:
 `CssViewportUnits.initContextSizes(context);` - то относительно чего мы будем
 вычислять размер. Можно это сделать один раз у самого верхнего родительского виджета.
 
+Инициализацию размеров также можно задавать через:
+
+- `CssViewportUnits.initConstraintsSize(final BoxConstraints constraints)` - задать размеры относительно BoxConstraints LayoutBuilder`а
+- `CssViewportUnits.initCustomSize(final Size size)` - задать кастомный размер экрана
+- `CssViewportUnits.initDefaultFontSize(final double fontSize)` - задать кастомный размер шрифта по умолчанию
+
 Например, зададим размеры `20 vmin` у контейнера:
 
 ```dart
@@ -63,7 +69,25 @@ Widget build(BuildContext context) {
 }
 ```
 
-## Почитать что это за размеры
+Если все размеры складываете в отдельный файл ресурсов, для получения
+значений используйте геттеры и вынесете туда инициализацию размеров контекста.
+
+Например, вынесем размеры в `resources/app_sizes.dart`:
+
+```dart
+class AppSizes {
+  static initContextSizes(BuildContext context) {
+    CssViewportUnits.initContextSizes(context);
+  }
+
+  static get cellSize => 20.vmin;
+  static get cellGap => 1.vmin;
+  static get borderRadius => 1.vmin;
+  static get fontSize => 7.5.vmin;
+}
+```
+
+## Почитать что это за CSS Viewport Units
 
 https://alligator.io/css/viewport-units/
 
