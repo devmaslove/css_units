@@ -48,7 +48,7 @@ dependencies:
 Инициализацию размеров также можно задавать через:
 
 - `CssViewportUnits.initConstraintsSize(final BoxConstraints constraints)` - задать размеры относительно BoxConstraints LayoutBuilder`а
-- `CssViewportUnits.initCustomSize(final Size size)` - задать кастомный размер экрана
+- `CssViewportUnits.initCustomSize(final Size size)` - задать кастомный размер *экрана*
 - `CssViewportUnits.initDefaultFontSize(final double fontSize)` - задать кастомный размер шрифта по умолчанию
 
 Например, зададим размеры `20 vmin` у контейнера:
@@ -58,19 +58,20 @@ dependencies:
 Widget build(BuildContext context) {
   CssViewportUnits.initContextSizes(context);
   return Container(
-    width: 20.vmin,
-    height: 20.vmin,
-    margin: EdgeInsets.all(1.vmin),
+    width: 20.vmin, // cellSize
+    height: 20.vmin, // cellSize
+    margin: EdgeInsets.all(1.vmin), // cellGap
     decoration: BoxDecoration(
       color: Colors.red,
-      borderRadius: BorderRadius.circular(1.vmin),
+      borderRadius: BorderRadius.circular(1.vmin), // borderRadius
     ),
   );
 }
 ```
 
 Если все размеры складываете в отдельный файл ресурсов, для получения
-значений используйте геттеры и вынесете туда инициализацию размеров контекста.
+значений используйте геттеры (чтобы размары вычислялись динамически при запросе)
+и вынесете туда инициализацию размеров контекста и вызывайте уже его перед использованием.
 
 Например, вынесем размеры в `resources/app_sizes.dart`:
 
