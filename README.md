@@ -90,6 +90,5 @@ class AppSizes {
 
 ## Почитать что это за CSS Viewport Units
 
-https://alligator.io/css/viewport-units/
-
-https://learn.javascript.ru/css-units#otnositelno-ekrana-vw-vh-vmin-vmax
+- [На английком](https://alligator.io/css/viewport-units/)
+- [На русском](https://learn.javascript.ru/css-units#otnositelno-ekrana-vw-vh-vmin-vmax)
