@@ -1,6 +1,6 @@
 # CSS Units
 
-Adding a converter for [CSS Viewport Units](https://learn.javascript.ru/css-units#otnositelno-ekrana-vw-vh-vmin-vmax) - `vmin`, `vmax`, `vw`, `vh`, `rem`.
+Adding a converter for [CSS Viewport Units](https://alligator.io/css/viewport-units/) - `vmin`, `vmax`, `vw`, `vh`, `rem`.
 
 Convenient wrapper to set dimensions relative to a screen
 or LayoutBuilder`s BoxConstraints.
