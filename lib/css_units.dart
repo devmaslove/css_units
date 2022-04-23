@@ -10,7 +10,7 @@ extension CssViewportUnits on double {
   /// Set viewport sizes and default font size from context
   static initContextSizes(BuildContext context) {
     _screenSize = MediaQuery.of(context).size;
-    _fontSize = DefaultTextStyle.of(context).style.fontSize ?? _fontSizeDef;
+    _fontSize = Theme.of(context).textTheme.bodyText1?.fontSize ?? _fontSizeDef;
   }
 
   /// Set custom default font size
