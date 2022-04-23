@@ -1,13 +1,11 @@
 # CSS Units
 
-Adding a converter for [CSS Viewport Units](https://learn.javascript.ru/css-units#otnositelno-ekrana-vw-vh-vmin-vmax) - `vmin`, `vmax`, `vw`, `vh`, `rem`.
+Добавляем конвертер для [CSS Viewport Units](https://learn.javascript.ru/css-units#otnositelno-ekrana-vw-vh-vmin-vmax) - `vmin`, `vmax`, `vw`, `vh`, `rem`.
 
-Convenient wrapper to set dimensions relative to a screen
-or LayoutBuilder`s BoxConstraints.
+Удобная обертка чтобы задавать размеры относительно экрана
+или BoxConstraints LayoutBuilder`а
 
-[Русский README.md](README.ru.md)
-
-## Idea
+## Идея
 
 Идея в том чтобы добавить относительные размеры из CSS Units 3 spec.
 Сделать это без функций и классов, просто расширяя стандартный `double`:
@@ -24,15 +22,15 @@ or LayoutBuilder`s BoxConstraints.
 
 Сделано на основе пакета [dimension](https://pub.dev/packages/dimension)
 
-## Features
+## Особенности
 
-Readability!
+Читабельность!
 
-See how beautiful and clear it is to set relative sizes: `width: 4.vmax`
+Смотрите как красиво и понятно задавать относительные размеры: `width: 4.vmax`
 
-## Install
+## Установка
 
-Change `pubspec.yaml` (and run an implicit pub get):
+Добавьте в `pubspec.yaml` (не забудьте запустить pub get):
 
 ```yaml
 dependencies:
@@ -41,7 +39,7 @@ dependencies:
       url: https://github.com/dmitrymaslovhome/css_units
 ```
 
-## Usage
+## Использование
 
 Внимание! Перед использованием относительных размеров нужно всегда вызывать
 `CssViewportUnits.initContextSizes(context);` - то относительно чего мы будем
