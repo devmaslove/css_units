@@ -9,20 +9,20 @@ or LayoutBuilder`s BoxConstraints.
 
 ## Idea
 
-Идея в том чтобы добавить относительные размеры из CSS Units 3 spec.
-Сделать это без функций и классов, просто расширяя стандартный `double`:
+The idea is to add relative sizes from CSS Units 3 spec.
+To do this without functions and classes, just extending the `double`:
 
-- `42.vmin` - 42% **наименьшей** стороны экрана в logical pixels (double)
-- `42.vmax` - 42% **наибольшей** стороны экрана в logical pixels (double)
-- `42.vw` - 42% **ширины** экрана в logical pixels (double)
-- `42.vh` - 42% **высоты** экрана в logical pixels (double)
-- `1.5.rem` - полторы высоты **размера шрифта** по умолчанию (если ничего не меняли то `fontSize=14.0` по умолчанию) в logical pixels (double)
+- `42.vmin` - 42% of the **smallest** side of the screen in logical pixels (double)
+- `42.vmax` - 42% of the **largest** side of the screen in logical pixels (double)
+- `42.vw` - 42% of the **width** of the screen in logical pixels (double)
+- `42.vh` - 42% of the **height** of the screen in logical pixels (double)
+- `1.5.rem` - one and a half height **default font size** (if nothing was changed then `fontSize=14.0` by default) in logical pixels (double)
 
-Плюсом добавлен еще процент:
+Plus added percentage:
 
-- `42.pc` - 42%, то есть число 0.42  (double)
+- `42.pc` - 42%, i.e. 0.42  (double)
 
-Сделано на основе пакета [dimension](https://pub.dev/packages/dimension)
+Made on the basis of the package [dimension](https://pub.dev/packages/dimension)
 
 ## Features
 
@@ -43,17 +43,17 @@ dependencies:
 
 ## Usage
 
-Внимание! Перед использованием относительных размеров нужно всегда вызывать
-`CssViewportUnits.initContextSizes(context);` - то относительно чего мы будем
-вычислять размер. Можно это сделать один раз у самого верхнего родительского виджета.
+Attention! You should always call `CssViewportUnits.initContextSizes(context);`
+before using relative sizes - about what we will calculate size.
+You can do this once at the topmost parent widget.
 
-Инициализацию размеров также можно задавать через:
+Dimension initialization can also be set via:
 
-- `CssViewportUnits.initConstraintsSize(final BoxConstraints constraints)` - задать размеры относительно BoxConstraints LayoutBuilder`а
-- `CssViewportUnits.initCustomSize(final Size size)` - задать кастомный размер *экрана*
-- `CssViewportUnits.initDefaultFontSize(final double fontSize)` - задать кастомный размер шрифта по умолчанию
+- `CssViewportUnits.initConstraintsSize(final BoxConstraints constraints)` - set dimensions relative to LayoutBuilder`s BoxConstraints
+- `CssViewportUnits.initCustomSize(final Size size)` - set custom *screen size*
+- `CssViewportUnits.initDefaultFontSize(final double fontSize)` - set custom default font size
 
-Например, зададим размеры `20 vmin` у контейнера:
+For example, let's set the dimensions to `20 vmin` for the Container:
 
 ```dart
 @override
@@ -71,11 +71,11 @@ Widget build(BuildContext context) {
 }
 ```
 
-Если все размеры складываете в отдельный файл ресурсов, для получения
-значений используйте геттеры (чтобы размеры вычислялись динамически при запросе)
-и вынесете туда инициализацию размеров контекста и вызывайте уже его перед использованием.
+If you put all the sizes in a separate resource file, to get values,
+use getters (so that sizes are calculated dynamically when requested).
+Also take out the initialization of the context sizes there and call it before using it.
 
-Например, вынесем размеры в `resources/app_sizes.dart`:
+For example, let's take out the sizes in `resources/app_sizes.dart`:
 
 ```dart
 class AppSizes {
