@@ -36,6 +36,13 @@ Change `pubspec.yaml` (and run an implicit pub get):
 
 ```yaml
 dependencies:
+  css_units: <latest_version>
+```
+
+Or get the latest version from github:
+
+```yaml
+dependencies:
   css_units:
     git:
       url: https://github.com/dmitrymaslovhome/css_units
