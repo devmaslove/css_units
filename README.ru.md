@@ -42,10 +42,11 @@ dependencies:
 ## Использование
 
 Внимание! Перед использованием относительных размеров нужно всегда вызывать
-`CssViewportUnits.initContextSizes(context);` - то относительно чего мы будем
-вычислять размер. Можно это сделать один раз у самого верхнего родительского виджета.
+`CssViewportUnits.initContextSizes(context);` именно в том контексте, где используете
+относительные размеры.
 
-Инициализацию размеров также можно задавать через:
+Инициализацию размеров (опять же, непосредственно в том контексте,
+где используте относительные размеры) также можно задавать через:
 
 - `CssViewportUnits.initConstraintsSize(final BoxConstraints constraints)` - задать размеры относительно BoxConstraints LayoutBuilder`а
 - `CssViewportUnits.initCustomSize(final Size size)` - задать кастомный размер *экрана*

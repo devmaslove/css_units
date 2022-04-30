@@ -7,7 +7,9 @@ extension CssViewportUnits on double {
   static Size? _screenSize;
   static double? _fontSize;
 
-  /// Set viewport sizes and default font size from context
+  /// Set viewport sizes from context (MediaQuery size)
+  ///
+  /// Set default font size from context (Theme textTheme bodyText1 fontSize)
   static initContextSizes(BuildContext context) {
     _screenSize = MediaQuery.of(context).size;
     _fontSize = Theme.of(context).textTheme.bodyText1?.fontSize ?? _fontSizeDef;
@@ -15,7 +17,7 @@ extension CssViewportUnits on double {
 
   /// Set custom default font size
   static initDefaultFontSize(final double fontSize) {
-    _fontSize = fontSize;
+    if (fontSize >= 1.0) _fontSize = fontSize;
   }
 
   /// Set viewport sizes from constraints
@@ -25,7 +27,7 @@ extension CssViewportUnits on double {
 
   /// Set custom viewport sizes
   static initCustomSize(final Size size) {
-    _screenSize = size;
+    if (!size.isEmpty) _screenSize = size;
   }
 
   /// vmin - percent of smallest between width or height of viewport

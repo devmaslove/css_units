@@ -51,10 +51,9 @@ dependencies:
 ## Usage
 
 Attention! You should always call `CssViewportUnits.initContextSizes(context);`
-before using relative sizes - about what we will calculate size.
-You can do this once at the topmost parent widget.
+before using relative sizes in current context.
 
-Dimension initialization can also be set via:
+Dimension initialization (before using relative sizes in current context) can also be set via:
 
 - `CssViewportUnits.initConstraintsSize(final BoxConstraints constraints)` - set dimensions relative to LayoutBuilder`s BoxConstraints
 - `CssViewportUnits.initCustomSize(final Size size)` - set custom *screen size*
