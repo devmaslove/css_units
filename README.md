@@ -51,13 +51,18 @@ dependencies:
 ## Usage
 
 Attention! You should always call `CssViewportUnits.initContextSizes(context);`
-before using relative sizes in current context.
+before using relative sizes.
 
-Dimension initialization (before using relative sizes in current context) can also be set via:
+Dimension initialization can also be set via:
 
 - `CssViewportUnits.initConstraintsSize(final BoxConstraints constraints)` - set dimensions relative to LayoutBuilder`s BoxConstraints
 - `CssViewportUnits.initCustomSize(final Size size)` - set custom *screen size*
 - `CssViewportUnits.initDefaultFontSize(final double fontSize)` - set custom default font size
+
+Attention! Call them directly in the context where you use relative sizes.
+You need to understand that the relative sizes are calculated dynamically.
+This means that if you set viewport size in one widget, and use relative sizes in others,
+they will not rebuild when viewport size change.
 
 For example, let's set the dimensions to `20 vmin` for the Container:
 
