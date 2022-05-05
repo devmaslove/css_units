@@ -16,7 +16,7 @@ To do this without functions and classes, just extending the `double`:
 - `42.vmax` - 42% of the **largest** side of the screen in logical pixels (double)
 - `42.vw` - 42% of the **width** of the screen in logical pixels (double)
 - `42.vh` - 42% of the **height** of the screen in logical pixels (double)
-- `3.rem` - 42 - three heights of **default font size** (if you didn't change then `14.0` * 3) in logical pixels (double)
+- `3.rem` - 42 - three heights of **default font size** (if you didn't change then `14.0 * 3`) in logical pixels (double)
 
 Plus added percentage:
 
