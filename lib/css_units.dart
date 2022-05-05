@@ -17,7 +17,7 @@ extension CssViewportUnits on double {
 
   /// Set custom default font size
   static initDefaultFontSize(final double fontSize) {
-    if (fontSize >= 1.0) _fontSize = fontSize;
+    if (fontSize > 0.0) _fontSize = fontSize;
   }
 
   /// Set viewport sizes from constraints

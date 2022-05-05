@@ -16,13 +16,13 @@ To do this without functions and classes, just extending the `double`:
 - `42.vmax` - 42% of the **largest** side of the screen in logical pixels (double)
 - `42.vw` - 42% of the **width** of the screen in logical pixels (double)
 - `42.vh` - 42% of the **height** of the screen in logical pixels (double)
-- `1.5.rem` - one and a half height **default font size** (if nothing was changed then `fontSize=14.0` by default) in logical pixels (double)
+- `3.rem` - 42 - three heights of **default font size** (if you didn't change then `14.0` * 3) in logical pixels (double)
 
 Plus added percentage:
 
 - `42.pc` - 42%, i.e. 0.42  (double)
 
-Made on the basis of the package [dimension](https://pub.dev/packages/dimension)
+Inspired by the idea from the package [dimension](https://pub.dev/packages/dimension)
 
 ## Features
 
@@ -64,23 +64,25 @@ You need to understand that the relative sizes are calculated dynamically.
 This means that if you set viewport size in one widget, and use relative sizes in others,
 they will not rebuild when viewport size change.
 
-For example, let's set the dimensions to `20 vmin` for the Container:
+For example, let's set the dimensions to `60 vmin` for the Container:
 
 ```dart
 @override
 Widget build(BuildContext context) {
   CssViewportUnits.initContextSizes(context);
   return Container(
-    width: 20.vmin, // cellSize
-    height: 20.vmin, // cellSize
+    width: 60.vmin, // cellSize
+    height: 60.vmin, // cellSize
     margin: EdgeInsets.all(1.vmin), // cellGap
     decoration: BoxDecoration(
-      color: Colors.red,
+      color: Colors.blue,
       borderRadius: BorderRadius.circular(1.vmin), // borderRadius
     ),
   );
 }
 ```
+
+![](.github/example.png)
 
 If you put all the sizes in a separate resource file, to get values,
 use getters (so that sizes are calculated dynamically when requested).
@@ -94,7 +96,7 @@ class AppSizes {
     CssViewportUnits.initContextSizes(context);
   }
 
-  static get cellSize => 20.vmin;
+  static get cellSize => 60.vmin;
   static get cellGap => 1.vmin;
   static get borderRadius => 1.vmin;
   static get fontSize => 7.5.vmin;
