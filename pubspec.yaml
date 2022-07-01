@@ -1,7 +1,7 @@
 name: css_units
 description: A conversion library that helps implement CSS Viewport Units
 version: 0.0.2
-repository: https://github.com/dmitrymaslovhome/css_units
+repository: https://github.com/devmaslove/css_units
 
 environment:
   sdk: ">=2.16.2 <3.0.0"

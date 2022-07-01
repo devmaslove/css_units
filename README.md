@@ -45,7 +45,7 @@ Or get the latest version from github:
 dependencies:
   css_units:
     git:
-      url: https://github.com/dmitrymaslovhome/css_units
+      url: https://github.com/devmaslove/css_units
 ```
 
 ## Usage
