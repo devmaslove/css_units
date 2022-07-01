@@ -1,3 +1,7 @@
+example/android/* linguist-vendored
+example/ios/* linguist-vendored
+example/web/* linguist-vendored
+example/windows/* linguist-vendored
 *.cc linguist-detectable=false
 *.cpp linguist-detectable=false
 *.h linguist-detectable=false
