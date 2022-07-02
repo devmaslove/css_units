@@ -5,3 +5,7 @@
 ## 0.0.2
 
 * Fix empty sizes
+
+## 0.0.3
+
+* fix github link, fix lib size (remove platforms folders for example)

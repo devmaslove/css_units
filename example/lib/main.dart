@@ -29,8 +29,11 @@ class MyAppContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              child: Text('60 vmin width', style: TextStyle(fontSize: 5.vmin)),
               height: 6.vmin,
+              child: Text(
+                '60 vmin width',
+                style: TextStyle(fontSize: 5.vmin),
+              ),
             ),
             Container(
               alignment: Alignment.center,
@@ -43,6 +46,7 @@ class MyAppContent extends StatelessWidget {
               ),
               child: Text(
                 "Text 2 rem",
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 2.rem,
                   color: Colors.white,
