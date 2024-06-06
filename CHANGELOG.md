@@ -9,3 +9,7 @@
 ## 0.0.3
 
 * fix github link, fix lib size (remove platforms folders for example)
+
+## 0.0.4
+
+* fix Theme.textTheme.bodyText1

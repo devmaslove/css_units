@@ -1,6 +1,6 @@
 name: css_units
 description: A conversion library that helps implement CSS Viewport Units
-version: 0.0.3
+version: 0.0.4
 repository: https://github.com/devmaslove/css_units
 
 environment:
